@@ -12,7 +12,11 @@ rates and learn how these drivers differ between different regions.
 Maureen, Joe, Cindy, Richard
 
 ## Table of Contents
+[Background](#Background)
 
+[Findings](#Findings)
+
+[Tables](#Tables)
 ## Background
 Due to the development of anti-retroviral therapies the HIV/AIDS epidemic is 
 generally considered to be under control in the US.  However, as of 2015 there 
@@ -31,3 +35,17 @@ these officials will be able to better marshal the resources necessary to combat
 HIV and prevent outbreaks from occurring.  Accurate modeling will also identify 
 risk factors for communities with high HIV infection rates and provide clues 
 as to how officials may better combat HIV in their respective communities.
+
+## Findings
+
+<img alt="HIV incidence" src='images/hiv_incidence.png'>
+
+
+<img alt="Linear regression errors" src='images/Linear_Regression_errors.png'>
+
+
+<img alt="reg errors" src='images/reg_errors.png'>
+
+<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.15.14 PM.png'>
+
+
