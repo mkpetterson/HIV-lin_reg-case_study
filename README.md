@@ -36,6 +36,21 @@ HIV and prevent outbreaks from occurring.  Accurate modeling will also identify
 risk factors for communities with high HIV infection rates and provide clues 
 as to how officials may better combat HIV in their respective communities.
 
+## Models
+We used the following regression models:
+- Linear Regression (both stats models and sklearn)
+- K-Fold Linear Regression
+- Regularization with K-Fold
+The residuals from the regression model are shown below. Note the outlier due to one of the counties having an extremely high incidence of HIV.
+<img alt="Linear regression errors" src='images/Linear_Regression_errors.png'>
+The metric we used to quantify our model was root mean squared error, although this value would fluctuate depending on the train/test split. The outlier with an incidence of 717 seemed to add greatly to the test errors. Below are the values we got for the different methods.
+- stats.models Linear Regression: 9.35
+- sklean Linear Regression: 9.35
+- Regularization + KFold: 1.75
+The regularizaion parameter alpha was chosen as the parameter for which the test errors were the smallest. The plot below shows the variation in train and test errors as alpha is changed and alpha = 2 corresponds to the minimum test errors.
+<img alt="reg errors" src='images/reg_errors.png'>
+
+
 ## Findings
 
 <img alt="HIV incidence" src='images/hiv_incidence.png'>
@@ -48,4 +63,8 @@ as to how officials may better combat HIV in their respective communities.
 
 <img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.15.14 PM.png'>
 
+<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.22.20 PM.png'>
 
+<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.22.53 PM.png'>
+
+<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.24.00 PM.png'>
