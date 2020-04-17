@@ -65,6 +65,26 @@ The regularizaion parameter alpha was chosen as the parameter for which the test
 
 <img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.22.20 PM.png'>
 
-<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.22.53 PM.png'>
-
 <img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.24.00 PM.png'>
+
+<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.24.02 PM.png'>
+
+<img alt="reg errors" src='images/corr_heatmap.png'>
+- correlation map of columns after the OLS model
+fac_corr_heatmap
+- correlation map of all facilities (accepts medicare and doesn't accept medicare)
+- some are highly correlate ('Med_MH_fac' and 'MH_fac')
+- follow it with the column values
+scatter_mat_HIV_cols
+- scatter matrix of all columns with HIV
+scatter_mat_fac_cols
+- scatter matrix of all facilities
+scatter_matrix_medfac
+- scatter maxtrix of facilities that accept medicare
+scatter_matrix_nonmedfac
+- scatter maxtrix of facilities that doesn't accept medicare
+<img alt="reg errors" src='images/corr_heatmap.png'>
+
+We created a correlation heatmap to see the correlations between all the columns that had pvalues less than 0.05.
+We also created scatter matrices of columns that could possibly be correlated based on the name. Looking at the facilities matrix, it seems that they are not independent from each other. We checked out the 'Med_MH_fac' column and the 'MH_fac' column because they have a 0.99 correlation value.
+Turns out they have extremely similar values, if not identical.
