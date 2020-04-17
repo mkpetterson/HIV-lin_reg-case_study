@@ -9,7 +9,7 @@ The metric we used to quantify our model was root mean squared error, although t
 - sklean Linear Regression: 9.35
 - Regularization + KFold: 1.75
 
-The regularizaion parameter alpha was chosen as the parameter for which the test errors were the smallest. The plot below shows the variation in train and test errors as alpha is changed and alpha = 3 corresponds to the minimum test errors. 
+The regularizaion parameter alpha was chosen as the parameter for which the test errors were the smallest. The plot below shows the variation in train and test errors as alpha is changed and alpha = 2 corresponds to the minimum test errors. 
 
 
 
