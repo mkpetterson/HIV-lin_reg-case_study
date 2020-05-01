@@ -1,23 +1,19 @@
 # Forecasting-HIV-Infections Case Study
+![badge](https://img.shields.io/badge/last%20modified-may%20%202020-success)
+![badge](https://img.shields.io/badge/status-in%20progress-yellow)
 
-## Case Study Goal
-1)	To accurately model HIV incidences (new infections per 100,000) in US 
-counties by building a linear regression model that utilizes HIV infection data,
-census data, data on the opioid crisis, and data on sexual orientation.
+<a href="https://github.com/RellikDog">Richard Bellamy</a> | <a href="https://github.com/cwong690">Cindy Wong</a> | <a href="https://github.com/mkpetterson">Maureen Petterson</a> | 
+Joseph Shanks
 
-2)	Identify features that are the most significant drivers of HIV infection 
-rates and learn how these drivers differ between different regions.
-
-## Team
-Maureen, Joe, Cindy, Richard
 
 ## Table of Contents
-[Background](#Background)
+- [Introduction](#Introduction)
+- [Data Preparation and Exploratory Data Analysis](#exploratory-data-analysis-and-data-preparation)
+- [Findings](#Findings)
+- [Tables](#Tables)
 
-[Findings](#Findings)
 
-[Tables](#Tables)
-## Background
+## Introduction
 Due to the development of anti-retroviral therapies the HIV/AIDS epidemic is 
 generally considered to be under control in the US.  However, as of 2015 there 
 were 971,524 people living with diagnosed HIV in the US with an estimation of 
@@ -36,6 +32,49 @@ HIV and prevent outbreaks from occurring.  Accurate modeling will also identify
 risk factors for communities with high HIV infection rates and provide clues 
 as to how officials may better combat HIV in their respective communities.
 
+
+<b>Our Goals:</b>
+1)	To accurately model HIV incidences (new infections per 100,000) in US 
+counties by building a linear regression model that utilizes HIV infection data,
+census data, data on the opioid crisis, and data on sexual orientation.
+
+2)	Identify features that are the most significant drivers of HIV infection 
+rates and learn how these drivers differ between different regions.
+
+
+## Data Preparation and Exploratory Data Analysis
+
+The dataset contained HIV prevalence infomation from 3139 columns. 
+
+![Data_head](images/data_head.png)
+ 
+
+
+We guessed that several of the columns were not going to be important features in building our regression model. In order to eliminate features, we did a quick least squares regression using stats models to look at the p-values of the different features. We also wanted to explore heavily correlated features an eliminate redundant ones. 
+
+
+
+
+
+
+
+Looking at the facilities matrix, it seems that they are not independent from each other. We checked out the 'Med_MH_fac' column and the 'MH_fac' column because they have a 0.99 correlation value. Turns out they have extremely similar values, if not identical and we decided to exclude redundant columns in our analysis. 
+ 
+ 
+<details>
+    <summary>Histogram of HIV Incidence</summary>
+<img alt="HIV incidence" src='images/hiv_incidence.png'> 
+</details>
+
+<details>
+    <summary>Correlation Heatmap</summary>
+<img alt="reg errors" src='images/corr_heatmap.png'>
+</details>
+
+
+
+
+
 ## Models
 We used the following regression models:
 - Linear Regression (both stats models and sklearn)
@@ -53,21 +92,13 @@ The regularizaion parameter alpha was chosen as the parameter for which the test
 
 ## Findings
 
-<img alt="HIV incidence" src='images/hiv_incidence.png'>
+
 
 
 <img alt="Linear regression errors" src='images/Linear_Regression_errors.png'>
 
 
 <img alt="reg errors" src='images/reg_errors.png'>
-
-<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.15.14 PM.png'>
-
-<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.22.20 PM.png'>
-
-<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.24.00 PM.png'>
-
-<img alt="reg errors" src='images/Screen Shot 2020-04-17 at 3.24.02 PM.png'>
 
 <img alt="reg errors" src='images/corr_heatmap.png'>
 - correlation map of columns after the OLS model
@@ -83,8 +114,4 @@ scatter_matrix_medfac
 - scatter maxtrix of facilities that accept medicare
 scatter_matrix_nonmedfac
 - scatter maxtrix of facilities that doesn't accept medicare
-<img alt="reg errors" src='images/corr_heatmap.png'>
 
-We created a correlation heatmap to see the correlations between all the columns that had pvalues less than 0.05.
-We also created scatter matrices of columns that could possibly be correlated based on the name. Looking at the facilities matrix, it seems that they are not independent from each other. We checked out the 'Med_MH_fac' column and the 'MH_fac' column because they have a 0.99 correlation value.
-Turns out they have extremely similar values, if not identical.
